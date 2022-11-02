@@ -1,0 +1,28 @@
+name: Test Workflow
+on:
+  workflow_call:
+    inputs:
+      call:
+        type: string
+  workflow_dispatch:
+    inputs:
+      dispatch:
+        type: string
+        description: dispatch
+
+jobs:
+  call:
+    name: workflow_call
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'workflow_call'
+    steps:
+    - name: workflow_call
+      run: echo "workflow_call"
+
+  dispatch:
+    name: workflow_dispatch
+    runs-on: ubuntu-20.04
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+    - name: workflow_dispatch
+      run: echo "workflow_dispatch"
