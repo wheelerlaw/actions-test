@@ -24,6 +24,8 @@ jobs:
       run: echo '${{ github.event_name }}'
     - name: github
       run: echo '${{ toJSON(github) }}' | jq .
+    - name: github 2
+      run: echo '${{ toJSON(github) }}' | jq .
     - name: env
       run: echo '${{ toJSON(env) }}' | jq .
     - name: job
