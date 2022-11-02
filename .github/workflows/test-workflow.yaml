@@ -20,7 +20,7 @@ jobs:
     - name: ${{ github.event_name }}
       run: echo "${{ github.event_name }}"
 
-  dispatch2call:
-    name: ${{ github.event_name }}2call
-    if: github.event_name == 'workflow_dispatch'
-    uses: ./.github/workflows/test-workflow.yaml
+#  dispatch2call:
+#    name: ${{ github.event_name }}2call
+#    if: github.event_name == 'workflow_dispatch'
+#    uses: ./.github/workflows/test-workflow.yaml
