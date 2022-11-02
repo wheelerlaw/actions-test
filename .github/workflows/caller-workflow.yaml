@@ -1,6 +1,8 @@
 name: Caller Workflow
 on:
   workflow_dispatch: {}
+env:
+  caller: caller
 
 jobs:
   dispatch2call:
