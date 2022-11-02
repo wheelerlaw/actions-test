@@ -18,3 +18,4 @@ jobs:
     steps:
     - name: ${{ github.event_name }}
       run: echo "${{ github.event_name }}"
+    - run: echo "${{ github }}"
