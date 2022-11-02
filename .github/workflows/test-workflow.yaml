@@ -24,8 +24,8 @@ jobs:
       run: echo "${{ toJSON(env) }}" | jq .
     - name: job
       run: echo "${{ toJSON(job) }}" | jq .
-    - name: jobs
-      run: echo "${{ toJSON(jobs) }}" | jq .
+#    - name: jobs
+#      run: echo "${{ toJSON(jobs) }}" | jq .
     - name: steps
       run: echo "${{ toJSON(steps) }}" | jq .
     - name: secrets
