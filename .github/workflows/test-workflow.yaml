@@ -18,12 +18,23 @@ jobs:
     steps:
     - name: ${{ github.event_name }}
       run: echo "${{ github.event_name }}"
-    - run: echo "${{ toJSON(github) }}"
-    - run: echo "${{ toJSON(env) }}"
-    - run: echo "${{ toJSON(job) }}"
-    - run: echo "${{ toJSON(steps) }}"
-    - run: echo "${{ toJSON(secrets) }}"
-    - run: echo "${{ toJSON(strategy) }}"
-    - run: echo "${{ toJSON(matrix) }}"
-    - run: echo "${{ toJSON(needs) }}"
-    - run: echo "${{ toJSON(inputs) }}"
+    - name: github
+      run: echo "${{ toJSON(github) }}" | jq .
+    - name: env
+      run: echo "${{ toJSON(env) }}" | jq .
+    - name: job
+      run: echo "${{ toJSON(job) }}" | jq .
+    - name: jobs
+      run: echo "${{ toJSON(jobs) }}" | jq .
+    - name: steps
+      run: echo "${{ toJSON(steps) }}" | jq .
+    - name: secrets
+      run: echo "${{ toJSON(secrets) }}" | jq .
+    - name: strategy
+      run: echo "${{ toJSON(strategy) }}" | jq .
+    - name: matrix
+      run: echo "${{ toJSON(matrix) }}" | jq .
+    - name: needs
+      run: echo "${{ toJSON(needs) }}" | jq .
+    - name: inputs
+      run: echo "${{ toJSON(inputs) }}" | jq .
