@@ -16,13 +16,13 @@ jobs:
     runs-on: ubuntu-20.04
     if: github.event_name == 'workflow_call'
     steps:
-    - name: workflow_call
-      run: echo "workflow_call"
+    - name: ${{ github.event_name }}
+      run: echo "${{ github.event_name }}"
 
   dispatch:
     name: workflow_dispatch
     runs-on: ubuntu-20.04
     if: github.event_name == 'workflow_dispatch'
     steps:
-    - name: workflow_dispatch
-      run: echo "workflow_dispatch"
+    - name: ${{ github.event_name }}
+      run: echo "${{ github.event_name }}"
