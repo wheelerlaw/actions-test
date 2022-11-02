@@ -17,24 +17,24 @@ jobs:
     if: github.event_name != 'workflow_call'
     steps:
     - name: ${{ github.event_name }}
-      run: echo "${{ github.event_name }}"
+      run: echo '${{ github.event_name }}'
     - name: github
-      run: echo "${{ toJSON(github) }}" | jq .
+      run: echo '${{ toJSON(github) }}' | jq .
     - name: env
-      run: echo "${{ toJSON(env) }}" | jq .
+      run: echo '${{ toJSON(env) }}' | jq .
     - name: job
-      run: echo "${{ toJSON(job) }}" | jq .
+      run: echo '${{ toJSON(job) }}' | jq .
 #    - name: jobs
-#      run: echo "${{ toJSON(jobs) }}" | jq .
+#      run: echo '${{ toJSON(jobs) }}' | jq .
     - name: steps
-      run: echo "${{ toJSON(steps) }}" | jq .
+      run: echo '${{ toJSON(steps) }}' | jq .
     - name: secrets
-      run: echo "${{ toJSON(secrets) }}" | jq .
+      run: echo '${{ toJSON(secrets) }}' | jq .
     - name: strategy
-      run: echo "${{ toJSON(strategy) }}" | jq .
+      run: echo '${{ toJSON(strategy) }}' | jq .
     - name: matrix
-      run: echo "${{ toJSON(matrix) }}" | jq .
+      run: echo '${{ toJSON(matrix) }}' | jq .
     - name: needs
-      run: echo "${{ toJSON(needs) }}" | jq .
+      run: echo '${{ toJSON(needs) }}' | jq .
     - name: inputs
-      run: echo "${{ toJSON(inputs) }}" | jq .
+      run: echo '${{ toJSON(inputs) }}' | jq .
