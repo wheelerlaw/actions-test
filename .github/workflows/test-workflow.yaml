@@ -1,6 +1,10 @@
 name: Test Workflow
 on:
   workflow_call:
+    inputs:
+      test:
+        type: string
+        required: true
 
 jobs:
   call:
@@ -38,6 +42,8 @@ jobs:
       run: echo '${{ toJSON(inputs) }}' | jq .
     - name: path file
       run: cat '${{ github.path }}'
+    - name: parent path file
+      run: cat '${{ inputs.test }}'
     - name: env file
       run: cat '${{ github.env }}'
     - name: step_summary file
