@@ -36,3 +36,13 @@ jobs:
       run: echo '${{ toJSON(needs) }}' | jq .
     - name: inputs
       run: echo '${{ toJSON(inputs) }}' | jq .
+    - name: path file
+      run: cat '${{ github.path }}'
+    - name: env file
+      run: cat '${{ github.env }}'
+    - name: step_summary file
+      run: cat '${{ github.step_summary }}'
+    - name: state file
+      run: cat '${{ github.state }}'
+    - name: output file
+      run: cat '${{ github.output }}'
