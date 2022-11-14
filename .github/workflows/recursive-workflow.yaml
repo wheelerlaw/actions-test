@@ -15,6 +15,8 @@ on:
       description: A sample input
 
 jobs:
+
+  # Entry point jobs live up here
   caller-job-1:
     name: Workflow Entry Point 1
     if: github.event_name == 'workflow_dispatch'
@@ -32,6 +34,7 @@ jobs:
     with:
       sample-input: ${{ matrix.data }}
 
+  # Reusable jobs live down here
   recursive-job-A:
     name: Recursive Inner Job A
     if: github.event_name == 'workflow_call'
