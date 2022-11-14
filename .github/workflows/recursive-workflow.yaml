@@ -1,0 +1,47 @@
+name: Recursive Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      sample-input:
+        type: string
+        required: false
+        default: 'hello-world'
+        description: A sample input
+  workflow_call:
+    sample-input:
+      type: string
+      required: false
+      default: 'Hello world'
+      description: A sample input
+
+jobs:
+  caller-job-1:
+    name: Workflow Entry Point 1
+    if: github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/recursive-workflow.yaml
+    with:
+      sample-input: ${{ inputs.sample-input }}
+
+  caller-job-2:
+    name: Workflow Entry Point 2 (with matrix)
+    if: github.event_name == 'workflow_dispatch'
+    uses: ./.github/workflows/recursive-workflow.yaml
+    strategy:
+      matrix:
+        data: ['Hello world', 'Hello Wheeler', 'Hello Waldo']
+    with:
+      sample-input: ${{ matrix.data }}
+
+  recursive-job-A:
+    name: Recursive Inner Job A
+    if: github.event_name == 'workflow_call'
+    runs-on: ubuntu-22.04
+    steps:
+    - run: echo '${{ inputs.sample-input }}'
+
+  resursive-job-B:
+    name: Recursive Inner Job B
+    if: github.event_name == 'workflow_call'
+    runs-on: ubuntu-22.04
+    steps:
+    - run: echo '${{ inputs.sample-input }}, but again!'
