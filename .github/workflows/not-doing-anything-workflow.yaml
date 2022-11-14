@@ -1,0 +1,9 @@
+name: Workflow Call Workflow
+on:
+  workflow_call: {}
+jobs:
+  job-A:
+    name: Job A
+    runs-on: ubuntu-22.04
+    steps:
+    - run: echo 'hello world'
