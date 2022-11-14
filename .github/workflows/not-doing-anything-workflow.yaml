@@ -1,4 +1,4 @@
-name: Workflow Call Workflow
+name: Not Doing Anything Workflow
 on:
   workflow_call: {}
 jobs:

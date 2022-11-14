@@ -13,7 +13,7 @@ jobs:
       test: ${{ github.path }}
 
   dispatch2call-2:
-    name: Not Doing Anything Workflow
+    name: Call the "Not Doing Anything Workflow"
     if: github.event_name == 'workflow_dispatch'
     uses: ./.github/workflows/not-doing-anything-workflow.yaml
 
