@@ -1,0 +1,10 @@
+name: Same Name Workflow
+on:
+  workflow_call: {}
+
+jobs:
+  test-job:
+    name: Test Job
+    runs-on: ubuntu-22.04
+    steps:
+    - run: echo hello-world
