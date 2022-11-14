@@ -5,7 +5,7 @@ on:
       sample-input:
         type: string
         required: false
-        default: 'hello-world'
+        default: 'Hello world'
         description: A sample input
   workflow_call:
     sample-input:
